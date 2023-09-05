@@ -1,0 +1,26 @@
+{
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnType": true,
+    "editor.wordBasedSuggestions": false,
+    "editor.tabSize": 4,
+  },
+  // .venv 内の python を使用
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "88"
+  ],
+  "python.linting.lintOnSave": true,
+  "python.linting.flake8Enabled": true, 
+  "python.linting.flake8Path": "${workspaceFolder}/.venv/bin/flake8",
+  "python.linting.flake8Args": [
+    // E203: ":"の前の空白を入れないルール
+  	// W503: 演算子の前に改行しないようにするルール
+    "--ignore=W293, W504, E501",
+    "--max-complexity=10"
+  ],
+  "python.linting.pylintEnabled": false,
+}
