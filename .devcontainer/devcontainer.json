@@ -1,0 +1,79 @@
+{
+  "name": "edl-hosting",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "runArgs": ["--init"],
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/poetry:2": {}
+  },
+  "postCreateCommand": "/bin/sh .devcontainer/postCreateCommand.sh",
+  "mounts": [
+    "source=venv-${devcontainerId},target=${containerWorkspaceFolder}/.venv,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "[python]": {
+          "diffEditor.ignoreTrimWhitespace": false,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+          },
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": false,
+          "editor.formatOnSaveMode": "modifications",
+          "editor.formatOnType": true,
+          "editor.tabSize": 4,
+          "editor.insertSpaces": true,
+          "editor.wordBasedSuggestions": false
+        },
+        "[json][jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true,
+          "editor.tabSize": 4,
+          "editor.insertSpaces": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll": true
+          }
+        },
+        "python.defaultInterpreterPath": ".venv/bin/python",
+        "python.analysis.autoFormatStrings": true,
+        "flake8.args": ["--config pyproject.toml"],
+        "flake8.path": [".venv/bin/pflake8"],
+        "flake8.interpreter": [".venv/bin/python"],
+        "black-formatter.path": ["--config pyproject.toml"],
+        "black-formatter.args": [".venv/bin/black"],
+        "black-formatter.interpreter": [".venv/bin/python"],
+        "isort.path": [".venv/bin/isort"],
+        "isort.check": true,
+        "isort.args": ["--settings-path", "pyproject.toml"],
+        "isort.importStrategy": "useBundled",
+        "isort.serverEnabled": true,
+        "isort.showNotifications": "always",
+        "isort.interpreter": [".venv/bin/python"],
+        "mypy-type-checker.path": [".venv/bin/mypy"],
+        "mypy-type-checker.interpreter": [".venv/bin/python"]
+      },
+      "extensions": [
+        // python
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "ms-python.mypy-type-checker",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "KevinRose.vsc-python-indent",
+        "njpwerner.autodocstring",
+        "donjayamanne.python-environment-manager",
+        // xml / yml / toml
+        "tamasfe.even-better-toml",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml",
+        // json formatter
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
