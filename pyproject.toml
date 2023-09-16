@@ -1,3 +1,22 @@
+[tool.poetry]
+name = "edl_hosting"
+version = "0.0.1"
+description = ""
+authors = ["Satoaki Ooto <satoaki.ooto@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+black = "^23.9.1"
+mypy = "^1.5.1"
+isort = "^5.12.0"
+pyproject-flake8 = "^6.0.0.post1"
+fqdn = "^1.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.black]
 line-length = 88
 
@@ -13,12 +32,14 @@ import_heading_localfolder = "Local Library"
 multi_line_output = 3
 # 最後の要素の末尾に","を付けるようにする設定
 include_trailing_comma = true
+force_grid_wrap = 0
 
 [tool.flake8]
 max-line-length = 88
 # E203: ":"の前の空白を入れないルール
+# W293: blank line contains whitespace
 # W503: 演算子の前に改行しないようにするルール
-extend-ignore = ["E203", "W503"]
+extend-ignore = ["E203", "W293","W503"]
 exclude = [".venv", ".git", "__pycache__",]
 max-complexity = 10
 
