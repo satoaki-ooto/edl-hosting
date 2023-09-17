@@ -19,16 +19,11 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-line-length = 88
+line-length = 90
 
 [tool.isort]
 profile = "black"
-line_length = 88
-# 各ライブラリ群の説明を追記する
-import_heading_stdlib      = "Standard Library"
-import_heading_thirdparty  = "Third Party Library"
-import_heading_firstparty  = "First Party Library"
-import_heading_localfolder = "Local Library"
+line_length = 90
 # from third_party import lib1, lib2...のような記述時の改行方法の設定(https://pycqa.github.io/isort/docs/configuration/multi_line_output_modes.html)
 multi_line_output = 3
 # 最後の要素の末尾に","を付けるようにする設定
@@ -36,11 +31,11 @@ include_trailing_comma = true
 force_grid_wrap = 0
 
 [tool.flake8]
-max-line-length = 88
+max-line-length = 90
 # E203: ":"の前の空白を入れないルール
 # W293: blank line contains whitespace
 # W503: 演算子の前に改行しないようにするルール
-extend-ignore = ["E203", "W293","W503"]
+extend-ignore = ["E203", "902", "W293", "W503"]
 exclude = [".venv", ".git", "__pycache__",]
 max-complexity = 10
 
