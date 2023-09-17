@@ -1,0 +1,26 @@
+{
+  "recommendations": [
+    // python
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+    "ms-python.flake8",
+    "ms-python.isort",
+    "ms-python.mypy-type-checker",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "KevinRose.vsc-python-indent",
+    "njpwerner.autodocstring",
+    "donjayamanne.python-environment-manager",
+    "kevinkyang.auto-comment-blocks",
+    // coder setting
+    "editorconfig.editorconfig",
+    "oderwat.indent-rainbow",
+    "aaron-bond.better-comments",
+    // xml / yml / toml
+    "tamasfe.even-better-toml",
+    "redhat.vscode-xml",
+    "redhat.vscode-yaml",
+    // json formatter
+    "esbenp.prettier-vscode"
+  ]
+}
