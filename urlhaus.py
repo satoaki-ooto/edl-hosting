@@ -35,6 +35,17 @@ def urlhaus_list(output_file_path: str) -> None:
 
 
 def main() -> None:
+    """
+    The main function that executes the program.
+
+    This function reads a file containing a list of URLs and calls the `urlhaus_list` function to process each URL.
+
+    Parameters:
+        None
+
+    Returns:
+        None
+    """
     file_path = 'urllist.txt'
     urlhaus_list(file_path)
 
